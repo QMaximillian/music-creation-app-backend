@@ -5,6 +5,7 @@ module Api
       def index
         @musics = Music.all
         render json: @musics
+        # render json: Music.includes(:users), include: ['users']
       end
 
 

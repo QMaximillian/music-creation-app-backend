@@ -5,6 +5,7 @@ module Api
       def index
         @lyrics = Lyric.all
         render json: @lyrics
+        # render json: Lyric.includes(:users), include: ['users']
       end
 
 

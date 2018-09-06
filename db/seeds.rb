@@ -9,3 +9,4 @@
 User.create(name: "Quinn")
 Music.create(music_text: "LALALA", user_id: 1)
 Lyric.create(lyric: "Also, LALALA", user_id: 1)
+Song.create(lyric_id: 1, music_id: 1)

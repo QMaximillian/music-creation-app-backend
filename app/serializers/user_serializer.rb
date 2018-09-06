@@ -1,6 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name
-
-  has_many :lyrics
-  has_many :musics
+  attributes :id, :name, :lyrics, :musics
+  
 end

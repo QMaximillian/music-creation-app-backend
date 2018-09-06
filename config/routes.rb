@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :songs
   namespace :api do
     namespace :v1 do
-      resources :musics, except: [:new, :edit]
-      resources :lyrics, except: [:new, :edit]
-      resources :users, except: [:new, :edit]
+      resources :musics
+      resources :lyrics
+      resources :users
+      resources :songs
     end
   end
 end
