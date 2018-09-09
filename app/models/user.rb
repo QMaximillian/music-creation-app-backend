@@ -1,9 +1,15 @@
 class User < ApplicationRecord
+  has_many :music_channels
+  has_many :music_messages, through: :music_channels
 
-  has_many :lyrics
-  has_many :musics
 
-  # has_many :songs, through: :lyrics
-  # has_many :songs, through: :musics
-
+  def self.all_username
+    users = User.all
+    users.map do |user|
+      {
+        'username' => user.username,
+        'identifier' => user.identifier
+      }
+  end
+end
 end

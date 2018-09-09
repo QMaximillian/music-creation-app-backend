@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :songs
   namespace :api do
     namespace :v1 do
-      resources :musics
-      resources :lyrics
+      resources :music_channels
       resources :users
-      resources :songs
+      resources :music_messages
+      mount ActionCable.server => '/cable'
     end
   end
 end

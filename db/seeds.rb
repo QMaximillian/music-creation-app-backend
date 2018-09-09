@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "Quinn")
-Music.create(music_text: "LALALA", user_id: 1, lyric_id: 1)
-Lyric.create(lyric: "Also, LALALA", user_id: 1)
-# Song.create(lyric_id: 1, music_id: 1)
+User.create(username: 'Quinn', identifier: '1')
+MusicChannel.create(user_id: 1, name: 'New Song')
+MusicMessage.create(music_channel_id: 1, content: 'LALALAALLAALA')
