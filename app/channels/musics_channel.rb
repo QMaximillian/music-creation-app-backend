@@ -10,13 +10,11 @@ class MusicsChannel < ApplicationCable::Channel
   end
 
   def send_text(data)
-    MusicMessage.create(content: data['content'], username: data['username'], color: data['color'], effect: data['effect'])
+    MusicMessage.create(content: data['content'], username: data['username'])
     # ActionCable.server.broadcast('chat_messages_channel', content: data['content'], username: data['username'])
-    ActionCable.server.broadcast('chat_messages_channel',
+    ActionCable.server.broadcast('musics_channel',
       content: data['content'],
-      username: data['username'],
-      color: data['color'],
-      effect: data['effect']
+      username: data['username']
     )
   end
 end
