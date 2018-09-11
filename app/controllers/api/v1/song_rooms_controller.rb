@@ -1,6 +1,4 @@
-module Api
-  module V1
-  class SongRoomsController < ApplicationController
+class Api::V1::SongRoomsController < ApplicationController
 
 
     def index
@@ -29,5 +27,3 @@ module Api
       params.require(:song_room).permit(:user_id)
     end
   end
-end
-end

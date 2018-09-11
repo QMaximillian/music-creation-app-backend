@@ -1,6 +1,4 @@
-module Api
-  module V1
-    class MusicMessagesController < ApplicationController
+class Api::V1::MusicMessagesController < ApplicationController
 
       def index
         @music_messages = MusicMessage.all
@@ -25,6 +23,4 @@ module Api
       def music_message_params
         params.require(:music_message).permit(:music_channel_id, :content)
       end
-    end
-  end
 end

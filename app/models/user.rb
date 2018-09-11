@@ -2,6 +2,8 @@ class User < ApplicationRecord
   # has_secure_password
   # validates :username
 
+  has_secure_password
+  validates :username, uniqueness: { case_sensitive: false}
 
   has_many :lyricist_song_rooms, class_name: 'SongRoom', foreign_key: 'lyricist_id'
 

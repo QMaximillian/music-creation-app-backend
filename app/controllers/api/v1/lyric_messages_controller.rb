@@ -1,6 +1,4 @@
-module Api
-  module V1
-    class LyricMessagesController < ApplicationController
+class Api::V1::LyricMessagesController < ApplicationController
 
       def index
         @lyric_messages = LyricMessage.all
@@ -26,5 +24,3 @@ module Api
         params.require(:lyric_message).permit(:lyric_channel_id, :content)
       end
     end
-  end
-end

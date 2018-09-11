@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :song_rooms
       # resources :lyric_channels
       resources :lyric_messages
+      post '/login', to: 'auth#login'
       # post '/login', to: 'auth/login'
       mount ActionCable.server => '/cable'
     end

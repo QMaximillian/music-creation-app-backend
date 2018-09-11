@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :email, :lyricist_song_rooms, :musician_song_rooms, :lyric_messages, :music_messages
+  attributes :id, :username, :password_digest, :lyricist_song_rooms, :musician_song_rooms, :lyric_messages, :music_messages
 
    # has_many :song_rooms
    # has_many :music_channels, through: :song_rooms
