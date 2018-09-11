@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
   has_many :music_messages, through: :musician_song_rooms, :foreign_key => :song_room_id
 
+  def format
+    {username: self.username, id: self.id}
+  end
+
   # has_many :lyric_messages, through: :lyricist_song_rooms
   #
   # has_many :music_messages, through: :music_song_rooms

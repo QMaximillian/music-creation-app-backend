@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       # resources :lyric_channels
       resources :lyric_messages
       post '/login', to: 'auth#login'
+      get '/reauth', to: 'auth#reauth'
       # post '/login', to: 'auth/login'
       mount ActionCable.server => '/cable'
     end

@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  skip_before_action :authorized, only: [:create]
 
       def index
         @users = User.all
@@ -13,11 +14,11 @@ class Api::V1::UsersController < ApplicationController
       end
 
       def create
-        # byebug
         @user = User.new(user_params)
 
         if @user.save
-          render json: @user, status: :created
+          token = encode_token({user_id: @user.id})
+          render json: {user: @user.format, jwt: token}, status: :created
         else
           render json: { message: 'Invalid Username or Password' }, status: :not_acceptable
         end
