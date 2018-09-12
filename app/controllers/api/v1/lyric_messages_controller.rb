@@ -18,6 +18,13 @@ class Api::V1::LyricMessagesController < ApplicationController
             end
         end
 
+        def update
+          # byebug
+          @lyric_message = LyricMessage.find(params[:id])
+          @lyric_message.update(content: params["content"])
+          render json: @lyric_message
+        end
+
       private
 
       def lyric_message_params
