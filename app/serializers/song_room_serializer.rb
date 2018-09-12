@@ -1,5 +1,5 @@
 class SongRoomSerializer < ActiveModel::Serializer
-  attributes :id, :lyricist_id, :musician_id, :lyric_message, :music_message
+  attributes :id, :lyricist_id, :musician_id, :song_name, :lyric_message, :music_message
   # has_one :music_channel
   # has_one :music_message
   # has_one :lyric_channel

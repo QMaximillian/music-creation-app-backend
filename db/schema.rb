@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_171143) do
   create_table "song_rooms", force: :cascade do |t|
     t.integer "lyricist_id"
     t.integer "musician_id"
+    t.string "song_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

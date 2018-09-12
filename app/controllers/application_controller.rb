@@ -35,6 +35,7 @@ class ApplicationController < ActionController::API
   end
 
   def authorized
+
     render json: {message: 'Invalid Credentials'}, status: :unauthorized unless logged_in
   end
 end
