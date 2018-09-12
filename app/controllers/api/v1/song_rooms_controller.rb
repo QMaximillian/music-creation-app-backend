@@ -14,8 +14,9 @@ class Api::V1::SongRoomsController < ApplicationController
     end
 
     def create
-      @song_room = SongRoom.new(song_room_params)
-
+      @song_room = SongRoom.new(song_rooms_params)
+      # can't hit byebug, why does my params want a "song_room"
+      byebug
       if @song_room.save
         render json: @song_room
       end
@@ -24,6 +25,6 @@ class Api::V1::SongRoomsController < ApplicationController
     private
 
     def song_rooms_params
-      params.require(:song_room).permit(:user_id)
+      params.require(:song_room).permit(:lyricist_id, :musician_id, :song_name)
     end
   end
