@@ -18,6 +18,13 @@ class Api::V1::MusicMessagesController < ApplicationController
             end
         end
 
+      def update
+        # byebug
+        @music_message = MusicMessage.find(params[:id])
+        @music_message.update(content: params["content"])
+        render json: @music_message
+      end
+
       private
 
       def music_message_params
